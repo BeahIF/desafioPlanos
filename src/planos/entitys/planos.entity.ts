@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import Cliente from 'src/cliente/entitys/cliente.entity';
+import Pessoa from 'src/pessoa/entitys/pessoa.entity';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 class Planos {
