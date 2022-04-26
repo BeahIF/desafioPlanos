@@ -1,7 +1,7 @@
 export class CreatePlanosDto{
     nome:string
     id_pessoa:number
-    id_client:number
+    id_cliente:number
     data:string
     email:string
     endereco:string
