@@ -1,4 +1,4 @@
-export class CreatePlanosDto{
+export class CreatePessoaBeneficioDto{
     nome:string
     id_pessoa:number
     id_cliente:number

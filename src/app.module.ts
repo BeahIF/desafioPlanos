@@ -5,12 +5,10 @@ import { AppService } from './app.service';
 import { PlanosModule } from './planos/planos.module';
 import { DatabaseModule } from 'database.module';
 import { ConfigModule } from '@nestjs/config';
-import { PessoaService } from './pessoa/pessoa.service';
-import { PessoaController } from './pessoa/pessoa.controller';
-import { ClienteController } from './cliente/cliente.controller';
-import { ClienteService } from './cliente/cliente.service';
 import { PessoaModule } from './pessoa/pessoa.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { PessoaBeneficioModule } from './pessoa-beneficio/pessoa-beneficio.module';
+import { PlanoOferecidoModule } from './plano-oferecido/plano-oferecido.module';
 import * as Joi from '@hapi/joi';
 
 @Module({
@@ -29,10 +27,11 @@ import * as Joi from '@hapi/joi';
         PORT: Joi.number(),
       }),
     }),
-    PlanosModule,
-    PessoaModule,
+    PessoaBeneficioModule,
+    PlanoOferecidoModule,
+   
   ],
-  controllers: [AppController, PessoaController, ClienteController],
-  providers: [AppService, PessoaService, ClienteService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
