@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-
 import { PlanosModule } from './planos/planos.module';
 import { DatabaseModule } from 'database.module';
 import { ConfigModule } from '@nestjs/config';

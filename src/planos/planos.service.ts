@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreatePlanosDto } from './dto/create-plano.dto';
@@ -16,5 +16,34 @@ export class PlanosService {
     return newPlanos;
 
   }
+
+  async getAllPlanos() {
+    return this.planosRepository.find();
+  }
+
+  async getPlanoById(id:number){
+    const pessoa = await this.planosRepository.findOne(id)
+    if (pessoa) {
+      return pessoa;
+    }
+    throw new HttpException('Plano não encontrado', HttpStatus.NOT_FOUND);
+  }
+
+
+  async updatePlano(id: number, pessoa) {
+    await this.planosRepository.update(id, pessoa);
+    const updatedPlano = await this.planosRepository.findOne(id);
+    if (updatedPlano) {
+      return updatedPlano
+    }
+    throw new HttpException('Plano não encontrado', HttpStatus.NOT_FOUND);
+  }
+
+  async deletePlano(id: number) {
+    const deleteResponse = await this.planosRepository.delete(id);
+    if (!deleteResponse.affected) {
+      throw new HttpException('Plano não encontrado', HttpStatus.NOT_FOUND);
+    }
+  } 
     
 }

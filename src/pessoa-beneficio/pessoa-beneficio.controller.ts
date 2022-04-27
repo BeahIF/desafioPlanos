@@ -4,19 +4,19 @@ import { PessoaBeneficioService } from './pessoa-beneficio.service';
 
 @Controller('pessoa-beneficio')
 export class PessoaBeneficioController {
-    constructor(private pessoaBeneficioService:PessoaBeneficioService){}
+  constructor(private pessoaBeneficioService: PessoaBeneficioService) {}
 
     
     
   @Get()
   getAllPessoaBeneficio() {
-    // return this.PessoaBeneficioervice.getAllPessoaBeneficio();
+    return this.pessoaBeneficioService.getAllPessoaBeneficio();
   }
 
   
   @Get(':id')
-  getPostById(@Param('id') id: string) {
-    // return this.PessoaBeneficioervice.getPessoaById(Number(id));
+  getPessoaBeneficioById(@Param('id') id: string) {
+    return this.pessoaBeneficioService.getPessoaBeneficioById(Number(id));
   }
  
 
@@ -28,12 +28,12 @@ export class PessoaBeneficioController {
   }
  
   @Put(':id')
-  async replacePessoa(@Param('id') id: string, @Body() post) {
-    // return this.PessoaBeneficioervice.replacePessoa(Number(id), post);
+  async updatePessoaBeneficio(@Param('id') id: string, @Body() pessoaBeneficio) {
+    return this.pessoaBeneficioService.updatePessoaBeneficio(Number(id), pessoaBeneficio);
   }
  
   @Delete(':id')
-  async deletePessoa(@Param('id') id: string) {
-    // this.PessoaBeneficioervice.deletePessoa(Number(id));
+  async deletePessoaBeneficio(@Param('id') id: string) {
+    this.pessoaBeneficioService.deletePessoaBeneficio(Number(id));
   }
 }

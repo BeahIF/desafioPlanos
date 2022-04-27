@@ -9,30 +9,30 @@ export class PlanoOferecidoController {
     
   @Get()
   getAllPlanoOferecido() {
-    // return this.planoOferecidoervice.getAllplanoOferecido();
+    return this.planoOferecidoService.getAllPlanoOferecidos();
   }
 
   
   @Get(':id')
-  getPostById(@Param('id') id: string) {
-    // return this.planoOferecidoervice.getPessoaById(Number(id));
+  getPlanoOferecidoById(@Param('id') id: string) {
+    return this.planoOferecidoService.getPlanoOferecidoById(Number(id));
   }
  
 
   
   @Post()
-  async createPessoa(@Body() post: CreatePlanoOferecidoDto) {
+  async createPlanoOferecido(@Body() post: CreatePlanoOferecidoDto) {
       return this.planoOferecidoService.createPlanoOferecido(post);
    
   }
  
   @Put(':id')
-  async replacePessoa(@Param('id') id: string, @Body() post) {
-    // return this.planoOferecidoervice.replacePessoa(Number(id), post);
+  async updatePlanoOferecido(@Param('id') id: string, @Body() post) {
+    return this.planoOferecidoService.updatePlanoOferecido(Number(id), post);
   }
  
   @Delete(':id')
-  async deletePessoa(@Param('id') id: string) {
-    // this.planoOferecidoervice.deletePessoa(Number(id));
+  async deletePlanoOferecido(@Param('id') id: string) {
+    this.planoOferecidoService.deletePlanoOferecido(Number(id));
   }
 }

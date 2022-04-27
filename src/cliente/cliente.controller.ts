@@ -8,31 +8,31 @@ export class ClienteController {
 
     
   @Get()
-  getAllPessoas() {
-    // return this.clienteService.getAllPessoas();
+  getAllClientes() {
+    return this.clienteService.getAllClientes();
   }
 
   
   @Get(':id')
   getPostById(@Param('id') id: string) {
-    // return this.clienteService.getPessoaById(Number(id));
+    return this.clienteService.getClienteById(Number(id));
   }
  
 
   
   @Post()
-  async createPessoa(@Body() post: CreateClienteDto) {
+  async createCliente(@Body() post: CreateClienteDto) {
       return this.clienteService.createCliente(post);
    
   }
  
   @Put(':id')
-  async replacePessoa(@Param('id') id: string, @Body() post) {
-    // return this.clienteService.replacePessoa(Number(id), post);
+  async updateCliente(@Param('id') id: string, @Body() cliente) {
+    return this.clienteService.updateCliente(Number(id), cliente);
   }
  
   @Delete(':id')
-  async deletePessoa(@Param('id') id: string) {
-    // this.clienteService.deletePessoa(Number(id));
+  async deleteCliente(@Param('id') id: string) {
+    this.clienteService.deleteCliente(Number(id));
   }
 }

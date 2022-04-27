@@ -9,13 +9,13 @@ export class PessoaController {
     
   @Get()
   getAllPessoas() {
-    // return this.pessoaService.getAllPessoas();
+    return this.pessoaService.getAllPessoas();
   }
 
   
   @Get(':id')
   getPostById(@Param('id') id: string) {
-    // return this.pessoaService.getPessoaById(Number(id));
+    return this.pessoaService.getPessoaById(Number(id));
   }
  
 
@@ -27,12 +27,12 @@ export class PessoaController {
   }
  
   @Put(':id')
-  async replacePessoa(@Param('id') id: string, @Body() post) {
-    // return this.pessoaService.replacePessoa(Number(id), post);
+  async updatePessoa(@Param('id') id: string, @Body() pessoa) {
+    return this.pessoaService.updatePessoa(Number(id), pessoa);
   }
  
   @Delete(':id')
   async deletePessoa(@Param('id') id: string) {
-    // this.pessoaService.deletePessoa(Number(id));
+    this.pessoaService.deletePessoa(Number(id));
   }
 }

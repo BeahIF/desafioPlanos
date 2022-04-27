@@ -9,30 +9,30 @@ export class PlanosController {
     
   @Get()
   getAllPlanos() {
-    // return this.planoservice.getAllplanos();
+    return this.planosService.getAllPlanos();
   }
 
   
   @Get(':id')
-  getPostById(@Param('id') id: string) {
-    // return this.planoservice.getPessoaById(Number(id));
+  getPlanosById(@Param('id') id: string) {
+    return this.planosService.getPlanoById(Number(id));
   }
  
 
   
   @Post()
-  async createPessoa(@Body() post: CreatePlanosDto) {
+  async createPlanos(@Body() post: CreatePlanosDto) {
       return this.planosService.createPlanos(post);
    
   }
  
   @Put(':id')
-  async replacePessoa(@Param('id') id: string, @Body() post) {
-    // return this.planoservice.replacePessoa(Number(id), post);
+  async updatePlanos(@Param('id') id: string, @Body() post) {
+    return this.planosService.updatePlano(Number(id), post);
   }
  
   @Delete(':id')
-  async deletePessoa(@Param('id') id: string) {
-    // this.planoservice.deletePessoa(Number(id));
+  async deletePlanos(@Param('id') id: string) {
+    this.planosService.deletePlano(Number(id));
   }
 }
