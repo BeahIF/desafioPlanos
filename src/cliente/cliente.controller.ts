@@ -14,7 +14,7 @@ export class ClienteController {
 
   
   @Get(':id')
-  getPostById(@Param('id') id: string) {
+  getClienteById(@Param('id') id: string) {
     return this.clienteService.getClienteById(Number(id));
   }
  
@@ -33,6 +33,6 @@ export class ClienteController {
  
   @Delete(':id')
   async deleteCliente(@Param('id') id: string) {
-    this.clienteService.deleteCliente(Number(id));
+    return this.clienteService.deleteCliente(Number(id));
   }
 }

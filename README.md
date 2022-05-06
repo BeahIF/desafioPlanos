@@ -1,7 +1,6 @@
-<p align="center">
+<!-- <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
-
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
@@ -20,7 +19,7 @@
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)
 
 ## Description
 
@@ -70,4 +69,27 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+Nest is [MIT licensed](LICENSE). -->
+<!-- 
+- O README do projeto está apenas usando o padrão do framework utilizado. Seria legal ter no readme instruções específicas de como rodar o projeto, quais versões foram utilizadas das tecnologias, como fazer a integração com o banco de dados e exemplos de requests para utilizar.
+- Foi legal ver que a candidata escreveu um pdf pra mostrar como pensou na solução, mas seria legal ter alguns exemplos pra ilustrar as ideias apresentadas. Foi mencionada a utilização do banco de dados, porém sem nenhuma instrução de como usar.
+- Senti um falta de testes no projeto pra aumentar a confiança do projeto" -->
+# Configuração 
+
+
+* Acesse o site de instalação do PostgreSQL https://www.postgresql.org/download/.
+* Escolha a versão do seu sistema operacional e instale-o.
+* Aceite todas as opções de instalação que são exibidas na tela de instalação.
+* Para facilitar o uso do banco de dados, você pode também instalar o pgAdmin em :https://www.pgadmin.org/download/.
+* Nesse software ou em linha de comando, o que você preferir, crie seu usário, senha e um banco de dados para esse projeto, essas informações serão usadas no passo abaixo. 
+* Na raiz do projeto, crie um arquivo chamado .env e coloque as seguintes informações:
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=<SEU USUÁRIO>
+POSTGRES_PASSWORD=<SUA SENHA>
+POSTGRES_DB=<SEU BANCO DE DADOS>
+PORT=<PORTA>
+* Acesse a pasta planos-de-saude e rode o comando npm i, que fará a instalação dos pacotes necessários, sendo eles:
+ADICIONAR ESSAS INFOS
+
+# Algumas requests para testes
