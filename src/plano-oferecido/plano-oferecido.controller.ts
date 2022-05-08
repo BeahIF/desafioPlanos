@@ -8,7 +8,8 @@ export class PlanoOferecidoController {
 
     
   @Get()
-  getAllPlanoOferecido() {
+  async getAllPlanoOferecido() {
+
     return this.planoOferecidoService.getAllPlanoOferecidos();
   }
 

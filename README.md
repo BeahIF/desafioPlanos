@@ -104,3 +104,15 @@ PORT=<PORTA>
     "rxjs": "^7.5.5"
 
 # Algumas requests para testes
+* localhost:3000/cliente metódo post com o seguinte body : {"nome":"Tio Patinhas Bank"}
+
+* localhost:3000/pessoa método get deve retornar o seguinte padrão: [
+    {
+        "id": 1,
+        "cpf": "01977856039"
+    },
+    {
+        "id": 2,
+        "cpf": "01977856041"
+    }
+]
