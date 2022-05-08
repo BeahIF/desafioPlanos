@@ -1,8 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import Cliente from 'src/cliente/entitys/cliente.entity';
-import Pessoa from 'src/pessoa/entitys/pessoa.entity';
-import PlanoOferecido from 'src/plano-oferecido/entitys/plano-oferecido.entity';
+import Pessoa from '../pessoa/entitys/pessoa.entity';
+import PlanoOferecido from '../plano-oferecido/entitys/plano-oferecido.entity';
 import { Repository } from 'typeorm';
 import { CreatePessoaBeneficioDto } from './dto/create-pessoa-beneficio.dto';
 import PessoaBeneficio from './entitys/pessoa-beneficio.entity';
@@ -141,28 +140,30 @@ export class PessoaBeneficioService {
     return this.pessoaBeneficioRepository.find();
   }
 
-  async getPessoaBeneficioById(id:number){
-    const pessoaBeneficio = await this.pessoaBeneficioRepository.findOne(id)
+  async getPessoaBeneficioById(id: number) {
+    const pessoaBeneficio = await this.pessoaBeneficioRepository.findOne(id);
     if (pessoaBeneficio) {
       return pessoaBeneficio;
     }
     throw new HttpException('Beneficio não encontrado', HttpStatus.NOT_FOUND);
   }
 
-
   async updatePessoaBeneficio(id: number, pessoa) {
     await this.pessoaBeneficioRepository.update(id, pessoa);
-    const updatedPessoaBenenficio = await this.pessoaBeneficioRepository.findOne(id);
+    const updatedPessoaBenenficio =
+      await this.pessoaBeneficioRepository.findOne(id);
     if (updatedPessoaBenenficio) {
-      return updatedPessoaBenenficio
+      return updatedPessoaBenenficio;
     }
     throw new HttpException('Beneficio não encontrado', HttpStatus.NOT_FOUND);
   }
 
   async deletePessoaBeneficio(id: number) {
-    const deleteResponse = await this.pessoaBeneficioRepository.delete(id);
-    if (!deleteResponse.affected) {
+    const pessoaBeneficio = await this.pessoaBeneficioRepository.findOne(id);
+    if (pessoaBeneficio) {
+      await this.pessoaBeneficioRepository.delete(id);
+    } else {
       throw new HttpException('Beneficio não encontrado', HttpStatus.NOT_FOUND);
     }
-  }   
+  }
 }

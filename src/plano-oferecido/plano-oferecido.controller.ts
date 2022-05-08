@@ -33,6 +33,6 @@ export class PlanoOferecidoController {
  
   @Delete(':id')
   async deletePlanoOferecido(@Param('id') id: string) {
-    this.planoOferecidoService.deletePlanoOferecido(Number(id));
+    return this.planoOferecidoService.deletePlanoOferecido(Number(id));
   }
 }

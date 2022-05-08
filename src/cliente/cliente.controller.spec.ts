@@ -87,7 +87,6 @@ describe('ClienteController', () => {
     it('should call the deleteCliente method in the service', () => {
       const result: any = 'result';
 
-    //   const result: any = undefined;
     const id:any = 1
       jest
         .spyOn(service, 'deleteCliente')

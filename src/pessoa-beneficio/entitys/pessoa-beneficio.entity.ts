@@ -1,5 +1,5 @@
-import Cliente from 'src/cliente/entitys/cliente.entity';
-import Pessoa from 'src/pessoa/entitys/pessoa.entity';
+import Cliente from '../../cliente/entitys/cliente.entity';
+import Pessoa from '../../pessoa/entitys/pessoa.entity';
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -27,13 +27,13 @@ class PessoaBeneficio {
   public email: string;
 
   @Column({ nullable: true })
-  public endereco: string;
+  public endereco?: string;
   @Column({ nullable: true })
-  public peso: number;
+  public peso?: number;
   @Column({ nullable: true })
-  public altura: number;
+  public altura?: number;
   @Column({ nullable: true })
-  public hora_meditacao: number;
+  public hora_meditacao?: number;
 }
 
 export default PessoaBeneficio;

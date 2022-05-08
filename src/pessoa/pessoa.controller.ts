@@ -14,7 +14,7 @@ export class PessoaController {
 
   
   @Get(':id')
-  getPostById(@Param('id') id: string) {
+  getPessoaById(@Param('id') id: string) {
     return this.pessoaService.getPessoaById(Number(id));
   }
  
@@ -33,6 +33,6 @@ export class PessoaController {
  
   @Delete(':id')
   async deletePessoa(@Param('id') id: string) {
-    this.pessoaService.deletePessoa(Number(id));
+    return this.pessoaService.deletePessoa(Number(id));
   }
 }

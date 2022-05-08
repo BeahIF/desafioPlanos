@@ -89,7 +89,18 @@ POSTGRES_USER=<SEU USUÁRIO>
 POSTGRES_PASSWORD=<SUA SENHA>
 POSTGRES_DB=<SEU BANCO DE DADOS>
 PORT=<PORTA>
-* Acesse a pasta planos-de-saude e rode o comando npm i, que fará a instalação dos pacotes necessários, sendo eles:
-ADICIONAR ESSAS INFOS
+* Acesse a pasta planos-de-saude e rode o comando npm i, que fará a instalação dos pacotes necessários, sendo eles por exemplo:
+
+    "@hapi/joi": "^17.1.1",
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.2.0",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/platform-express": "^7.6.15",
+    "@nestjs/typeorm": "^8.0.3",
+    "@types/hapi__joi": "^17.1.8",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.5.5"
 
 # Algumas requests para testes

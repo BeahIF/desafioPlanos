@@ -15,8 +15,8 @@ export class ClienteService {
     return this.clienteRepository.find();
   }
 
-  async getClienteById(id:number){
-    const cliente = await this.clienteRepository.findOne(id)
+  async getClienteById(id: number) {
+    const cliente = await this.clienteRepository.findOne(id);
     if (cliente) {
       return cliente;
     }
@@ -24,7 +24,7 @@ export class ClienteService {
   }
 
   async createCliente(cliente: CreateClienteDto) {
-    const newCliente = await this.clienteRepository.create(cliente);
+    const newCliente = this.clienteRepository.create(cliente);
     await this.clienteRepository.save(newCliente);
     return newCliente;
   }
@@ -33,15 +33,17 @@ export class ClienteService {
     await this.clienteRepository.update(id, cliente);
     const updatedCliente = await this.clienteRepository.findOne(id);
     if (updatedCliente) {
-      return updatedCliente
+      return updatedCliente;
     }
     throw new HttpException('Cliente não encontrado', HttpStatus.NOT_FOUND);
   }
 
   async deleteCliente(id: number) {
-    const deleteResponse = await this.clienteRepository.delete(id);
-    if (!deleteResponse.affected) {
+    const cliente = await this.clienteRepository.findOne(id);
+    if (cliente) {
+      await this.clienteRepository.delete(id);
+    } else {
       throw new HttpException('Cliente não encontrado', HttpStatus.NOT_FOUND);
     }
-  }   
+  }
 }

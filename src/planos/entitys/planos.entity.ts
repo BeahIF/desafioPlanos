@@ -1,6 +1,5 @@
-import Cliente from 'src/cliente/entitys/cliente.entity';
-import Pessoa from 'src/pessoa/entitys/pessoa.entity';
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+
+import { Column, Entity,  PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 class Planos {

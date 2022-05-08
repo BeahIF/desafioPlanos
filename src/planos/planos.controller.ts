@@ -33,6 +33,6 @@ export class PlanosController {
  
   @Delete(':id')
   async deletePlanos(@Param('id') id: string) {
-    this.planosService.deletePlano(Number(id));
+    return this.planosService.deletePlano(Number(id));
   }
 }

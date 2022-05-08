@@ -45,8 +45,10 @@ export class PlanoOferecidoService {
   }
 
   async deletePlanoOferecido(id: number) {
-    const deleteResponse = await this.planoOferecidoRepository.delete(id);
-    if (!deleteResponse.affected) {
+    const planoOferecido = await this.planoOferecidoRepository.findOne(id);
+if(planoOferecido){
+    await this.planoOferecidoRepository.delete(id);
+}else {
       throw new HttpException('Plano Oferecido não encontrado', HttpStatus.NOT_FOUND);
     }
   } 
